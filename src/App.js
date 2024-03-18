@@ -64,7 +64,7 @@ function CertificateCard({ certificate, onCardClick, onDownload }) {
           marginBottom: '6px',
         }}
       ></div>
-      <h3 style={{marginTop: "20px"}}>{certificate.title}</h3>
+      <h3 className='heading'>{certificate.title}</h3>
       <div className="button-container">
         <button className='view-button'>View</button>
         <button className='view-button' onClick={handleDownload}>Download</button>
@@ -83,8 +83,12 @@ function CertificateModal({ certificate, onClose, onDownload }) {
       <div className='certificate-content'>
         <img src={certificate.imageUrl} alt={certificate.title} />
         <p>{certificate.info}</p>
-        <button onClick={onClose}>Close</button>
-        <button onClick={handleDownload}>Download</button>
+        <div className="button-container">
+        <button className='view-button' onClick={onClose} >Close</button>
+        <button className='view-button' onClick={handleDownload}>Download</button>
+      </div>
+        {/* <button onClick={onClose}>Close</button>
+        <button onClick={handleDownload}>Download</button> */}
       </div>
     </div>
   );
