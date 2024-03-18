@@ -49,7 +49,12 @@ const certificatesData = [
   },
 ];
 
-function CertificateCard({ certificate, onCardClick }) {
+function CertificateCard({ certificate, onCardClick, onDownload }) {
+  const handleDownload = (e) => {
+    e.stopPropagation(); // Prevent card click when download button is clicked
+    onDownload(certificate.imageUrl);
+  };
+
   return (
     <div className='certificate-card' onClick={() => onCardClick(certificate)}>
       <div
@@ -59,19 +64,27 @@ function CertificateCard({ certificate, onCardClick }) {
           marginBottom: '6px',
         }}
       ></div>
-      <h3>{certificate.title}</h3>
-      <button className='view-button'>View</button>
+      <h3 style={{marginTop: "20px"}}>{certificate.title}</h3>
+      <div className="button-container">
+        <button className='view-button'>View</button>
+        <button className='view-button' onClick={handleDownload}>Download</button>
+      </div>
     </div>
   );
 }
 
-function CertificateModal({ certificate, onClose }) {
+function CertificateModal({ certificate, onClose, onDownload }) {
+  const handleDownload = () => {
+    onDownload(certificate.imageUrl);
+  };
+
   return (
     <div className='certificate-modal'>
       <div className='certificate-content'>
         <img src={certificate.imageUrl} alt={certificate.title} />
         <p>{certificate.info}</p>
         <button onClick={onClose}>Close</button>
+        <button onClick={handleDownload}>Download</button>
       </div>
     </div>
   );
@@ -86,6 +99,16 @@ function App() {
 
   const handleCloseModal = () => {
     setSelectedCertificate(null);
+  };
+
+  const handleDownload = (imageUrl) => {
+    // Create a temporary anchor element
+    const anchor = document.createElement('a');
+    anchor.href = imageUrl;
+    anchor.download = 'certificate.jpg';
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
   };
 
   return (
@@ -114,6 +137,7 @@ function App() {
             key={certificate.id}
             certificate={certificate}
             onCardClick={handleCardClick}
+            onDownload={handleDownload}
           />
         ))}
       </div>
@@ -121,6 +145,7 @@ function App() {
         <CertificateModal
           certificate={selectedCertificate}
           onClose={handleCloseModal}
+          onDownload={handleDownload}
         />
       )}
     </div>
