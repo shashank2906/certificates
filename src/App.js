@@ -3,6 +3,12 @@ import './App.css';
 
 import accentureImage from './Images/accenture.jpg';
 import metaImage from './Images/meta.jpg';
+import one from './Images/1.jpg'
+import two from './Images/2.jpg'
+import three from './Images/3.jpg'
+import four from './Images/4.jpg'
+import five from './Images/5.jpg'
+import six from './Images/6.jpg'
 
 const certificatesData = [
   {
@@ -19,33 +25,39 @@ const certificatesData = [
   },
   {
     id: 3,
-    title: 'Certificate 2',
+    title: 'AWS Solutions Architect Virtual Program',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: one
   },
   {
     id: 4,
-    title: 'Certificate 2',
+    title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: two
   },
   {
     id: 5,
-    title: 'Certificate 2',
+    title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: three
   },
   {
     id: 6,
-    title: 'Certificate 2',
+    title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: four
   },
   {
     id: 7,
-    title: 'Certificate 2',
+    title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: five
+  },
+  {
+    id: 7,
+    title: 'Engineering Vitual Program (Goldman Sachs',
+    info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    imageUrl: six
   },
 ];
 
@@ -82,6 +94,7 @@ function CertificateModal({ certificate, onClose, onDownload }) {
     <div className='certificate-modal'>
       <div className='certificate-content'>
         <img src={certificate.imageUrl} alt={certificate.title} />
+        <hr className="divider-line" /> {/* Divider line */}
         <p>{certificate.info}</p>
         <div className="button-container">
         <button className='view-button' onClick={onClose} >Close</button>
