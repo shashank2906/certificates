@@ -3,12 +3,12 @@ import './App.css';
 
 import accentureImage from './Images/accenture.jpg';
 import metaImage from './Images/meta.jpg';
-import one from './Images/1.jpg'
-import two from './Images/2.jpg'
-import three from './Images/3.jpg'
-import four from './Images/4.jpg'
-import five from './Images/5.jpg'
-import six from './Images/6.jpg'
+import one from './Images/1.jpg';
+import two from './Images/2.jpg';
+import three from './Images/3.jpg';
+import four from './Images/4.jpg';
+import five from './Images/5.jpg';
+import six from './Images/6.jpg';
 
 const certificatesData = [
   {
@@ -27,37 +27,37 @@ const certificatesData = [
     id: 3,
     title: 'AWS Solutions Architect Virtual Program',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: one
+    imageUrl: one,
   },
   {
     id: 4,
     title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: two
+    imageUrl: two,
   },
   {
     id: 5,
     title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: three
+    imageUrl: three,
   },
   {
     id: 6,
     title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: four
+    imageUrl: four,
   },
   {
     id: 7,
     title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: five
+    imageUrl: five,
   },
   {
     id: 7,
     title: 'Engineering Vitual Program (Goldman Sachs',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imageUrl: six
+    imageUrl: six,
   },
 ];
 
@@ -77,9 +77,11 @@ function CertificateCard({ certificate, onCardClick, onDownload }) {
         }}
       ></div>
       <h3 className='heading'>{certificate.title}</h3>
-      <div className="button-container">
+      <div className='button-container'>
         <button className='view-button'>View</button>
-        <button className='view-button' onClick={handleDownload}>Download</button>
+        <button className='view-button' onClick={handleDownload}>
+          Download
+        </button>
       </div>
     </div>
   );
@@ -93,15 +95,16 @@ function CertificateModal({ certificate, onClose, onDownload }) {
   return (
     <div className='certificate-modal'>
       <div className='certificate-content'>
-        <img src={certificate.imageUrl} alt={certificate.title} />
-        <hr className="divider-line" /> {/* Divider line */}
-        <p>{certificate.info}</p>
-        <div className="button-container">
-        <button className='view-button' onClick={onClose} >Close</button>
-        <button className='view-button' onClick={handleDownload}>Download</button>
-      </div>
-        {/* <button onClick={onClose}>Close</button>
-        <button onClick={handleDownload}>Download</button> */}
+        <hr className='divider-line' />
+        <div className='view-adjust'>
+          <img src={certificate.imageUrl} alt={certificate.title} />
+          <button className='view-button' onClick={onClose}>
+            Close
+          </button>
+        </div>
+        <hr className='divider-line' />
+
+        <div className='button-container'></div>
       </div>
     </div>
   );
@@ -132,19 +135,19 @@ function App() {
     <div className='app'>
       <nav class='navbar'>
         <a href='https://twitter.com/2906_shashank' target='_blank'>
-          <i class='fa-brands fa-twitter'></i>
+          <i class='fa-brands fa-twitter' style={{ color: '#1DA1F2' }}></i>
         </a>
         <a href='https://www.linkedin.com/in/shashank2906/' target='_blank'>
-          <i class='fab fa-linkedin'></i>
+          <i class='fab fa-linkedin' style={{ color: '#0077b5' }}></i>
         </a>
         <a href='https://github.com/shashank2906/' target='_blank'>
-          <i class='fab fa-github'></i>
+          <i class='fab fa-github' style={{ color: '#2b3137' }}></i>
         </a>
         <a href='#' target='_blank'>
-          <i class='fa-solid fa-address-card'></i>
+          <i class='fa-solid fa-address-card' style={{ color: '#333333' }}></i>
         </a>
         <a href='#' target='_blank'>
-          <i class='fa-solid fa-book-open'></i>
+          <i class='fa-solid fa-book-open' style={{ color: '#1E1E1E' }}></i>
         </a>
       </nav>
 
