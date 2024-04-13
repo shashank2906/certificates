@@ -9,22 +9,29 @@ import three from './Images/3.jpg';
 import four from './Images/4.jpg';
 import five from './Images/5.jpg';
 import six from './Images/6.jpg';
+import seven from './Images/7.jpg';
 
 const certificatesData = [
   {
     id: 1,
+    title: 'ITIL Certification',
+    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    imageUrl: seven,
+  },
+  {
+    id: 2,
     title: 'Accenture Developer Program',
     info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     imageUrl: accentureImage,
   },
   {
-    id: 2,
+    id: 3,
     title: 'Meta Version Control',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     imageUrl: metaImage,
   },
   {
-    id: 3,
+    id: 4,
     title: 'AWS Solutions Architect Virtual Program',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     imageUrl: one,
