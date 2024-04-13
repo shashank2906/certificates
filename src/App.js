@@ -19,13 +19,13 @@ const certificatesData = [
     imageUrl: seven,
   },
   {
-    id: 2,
+    id: 1,
     title: 'Accenture Developer Program',
     info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     imageUrl: accentureImage,
   },
   {
-    id: 3,
+    id: 1,
     title: 'Meta Version Control',
     info: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     imageUrl: metaImage,
